@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] LayerMask brickLayer;
     private Vector3 mousePositionStart, mousePositionEnd;
+    private Vector3 raycastStart;
     
 
     //private Vector3 position;
@@ -52,26 +53,34 @@ public class PlayerMove : MonoBehaviour
             mousePositionEnd = Input.mousePosition;
            
         }
-        Vector3 direction = mousePositionEnd - mousePositionStart;
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        if (mousePositionEnd != null)
         {
-            direction.y = 0f;
-        }
-        else
-        {
-            direction.x = 0f;
-        }
-        transform.position = Vector3.MoveTowards(transform.position, direction, 1f);
-        RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if(direction.x > 0)
-        {
-            if (Physics.Raycast(transform.position, Vector3.down, out hit, 10f, brickLayer))
+            Vector3 direction = mousePositionEnd - mousePositionStart;
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
             {
-                Debug.DrawRay(transform.position, Vector3.down * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
+                direction.y = 0f;
+            }
+            else
+            {
+                direction.x = 0f;
+            }
+            
+            RaycastHit hit;
+            // Does the ray intersect any objects excluding the player layer
+            if (direction.x > 0)
+            {
+                raycastStart = transform.position + Vector3.right;
+                if (Physics.Raycast(raycastStart, Vector3.down, out hit, 10f, brickLayer))
+                {
+                    Debug.DrawRay(raycastStart, Vector3.down * hit.distance, Color.yellow);
+                    Debug.Log("Did Hit");
+                    transform.position += direction.normalized * speed * Time.deltaTime;
+                }
+
             }
         }
+
+        
 
 
         // Handle screen touches.
