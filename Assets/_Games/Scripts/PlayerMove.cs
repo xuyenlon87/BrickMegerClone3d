@@ -95,8 +95,10 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.CompareTag("Brick"))
         {
-            other.transform.parent = transform.GetChild(0);
             other.GetComponent<Collider>().isTrigger = false;
+            other.transform.parent = transform.GetChild(0);
+            other.transform.position = Vector3.zero;
+            transform.Translate(0, transform.position.y + 0.1f, 0);
         }
     }
 }
