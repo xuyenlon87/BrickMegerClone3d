@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94568308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -893,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 94568308}
     - target: {fileID: 2486593045955199782, guid: 7a5d2e141267c8c47b2b8f0f079efde7, type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2486593045955199782, guid: 7a5d2e141267c8c47b2b8f0f079efde7, type: 3}
       propertyPath: brickLayer.m_Bits

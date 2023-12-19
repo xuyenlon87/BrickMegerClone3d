@@ -95,7 +95,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.CompareTag("Brick"))
         {
-            other.transform.parent = foot.transform;
+            other.transform.parent = transform.GetChild(0);
             other.GetComponent<Collider>().isTrigger = false;
         }
     }
