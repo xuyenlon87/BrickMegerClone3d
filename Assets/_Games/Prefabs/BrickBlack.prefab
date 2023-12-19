@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6460278183825525984}
   - component: {fileID: 2203867886202295525}
   - component: {fileID: 2098297552182095502}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BrickBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5553725968570522807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.655, y: 0.71492434, z: 1.151363}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

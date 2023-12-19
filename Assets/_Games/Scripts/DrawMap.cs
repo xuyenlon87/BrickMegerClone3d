@@ -25,7 +25,6 @@ public class DrawMap : MonoBehaviour
                 for(int j = 0; j < dataArray2.Length; j++)
                 {
                     map[i, j] = int.Parse(dataArray2[j]);
-                    Debug.Log(map[i,j]);
                     if(map[i,j] == 2)
                     {
                         Instantiate(brickPrefabGreen, new Vector3(j, 0, -i), Quaternion.identity);
