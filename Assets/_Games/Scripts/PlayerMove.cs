@@ -6,11 +6,10 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] LayerMask brickLayer;
-    [SerializeField] GameObject foot;
+    [SerializeField] GameObject playerImg;
     private Vector3 mousePositionStart, mousePositionEnd;
     private Vector3 raycastStart;
     private RaycastHit hitCheckBrick;
-
     void Start()
     {
 
@@ -46,7 +45,7 @@ public class PlayerMove : MonoBehaviour
         if (direction.x > 0)
         {
             raycastStart = transform.position + new Vector3(1f, 0, 0);
-            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.yellow);
+            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.black, 20f);
             Debug.Log("Did hitCheckBrick");
             if (Physics.Raycast(raycastStart, Vector3.down, out hitCheckBrick, 10f, brickLayer))
             {
@@ -57,7 +56,7 @@ public class PlayerMove : MonoBehaviour
         else if (direction.x < 0)
         {
             raycastStart = transform.position + new Vector3(-1f, 0, 0);
-            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.yellow);
+            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.black, 20f);
             Debug.Log("Did hitCheckBrick");
             if (Physics.Raycast(raycastStart, Vector3.down, out hitCheckBrick, 10f, brickLayer))
             {
@@ -67,8 +66,8 @@ public class PlayerMove : MonoBehaviour
         }
         else if (direction.y > 0)
         {
-            raycastStart = transform.position + new Vector3(0,0,1f);
-            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.yellow);
+            raycastStart = transform.position + new Vector3(0, 0, 1f);
+            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.black, 20f);
             Debug.Log("Did hitCheckBrick");
             if (Physics.Raycast(raycastStart, Vector3.down, out hitCheckBrick, 10f, brickLayer))
             {
@@ -79,27 +78,24 @@ public class PlayerMove : MonoBehaviour
         else if (direction.y < 0)
         {
             raycastStart = transform.position + new Vector3(0, 0, -1f);
-            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.yellow);
+            Debug.DrawRay(raycastStart, Vector3.down * hitCheckBrick.distance, Color.black, 20f);
             Debug.Log("Did hitCheckBrick");
             if (Physics.Raycast(raycastStart, Vector3.down, out hitCheckBrick, 10f, brickLayer))
             {
                 transform.position = Vector3.MoveTowards(transform.position, raycastStart, Time.deltaTime * speed);
             }
         }
-
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Brick"))
         {
-            Debug.Log("brick");
-            other.transform.parent = transform.GetChild(0);
-            transform.Translate(0, 0.1f, 0);
-            other.GetComponent<Collider>().isTrigger = false;
-            other.transform.localPosition = Vector3.down ;
-            other.GetComponent<Rigidbody>().useGravity = true;
+            //Nhấc playerImg lên 0.1f
+            playerImg.transform.position += new Vector3(0, 0.1f, 0);
+            //Nhét brick xuống dưới
+            other.transform.parent = playerImg.transform;
+            other.transform.localPosition = new Vector3(0,playerImg.transform.position.y*-1, 0);
         }
     }
 }
