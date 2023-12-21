@@ -9,6 +9,7 @@ public class DrawMap : MonoBehaviour
     [SerializeField] GameObject brickPrefabBlack;
     [SerializeField] GameObject brickPrefabRed;
     [SerializeField] GameObject brickPrefab;
+    [SerializeField] GameObject playerPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class DrawMap : MonoBehaviour
                     else if(map[i,j] == 1)
                     {
                         GameObject brickStart = Instantiate(brickPrefabBlack, new Vector3(j, 0, -i), Quaternion.identity);
+                        Instantiate(playerPrefab, (brickStart.transform.position + Vector3.up), Quaternion.identity);
                     }
                     else if (map[i, j] == 3)
                     {
