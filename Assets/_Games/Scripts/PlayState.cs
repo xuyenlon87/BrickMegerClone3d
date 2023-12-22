@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartState : IState
+public class PlayState : IState
 {
-    float timer = 0;
+    // Start is called before the first frame update
     public void OnEnter(GameManager gameManager)
     {
-        timer += Time.deltaTime;
-        LevelManager.Instance.DrawMap();
-        if(timer >= 0.5f)
-        {
-            gameManager.ChangeState(new PlayState());
-        }
+
     }
     public void OnExecute(GameManager gameManager)
     {
@@ -20,7 +15,6 @@ public class StartState : IState
     }
     public void OnExit(GameManager gameManager)
     {
-        
 
     }
 }

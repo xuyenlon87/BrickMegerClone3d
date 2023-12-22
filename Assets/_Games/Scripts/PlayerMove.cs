@@ -102,8 +102,6 @@ public class PlayerMove : MonoBehaviour
                 other.transform.parent = playerImg.transform;
                 other.transform.localPosition = new Vector3(0, playerImg.transform.position.y * -1, 0);
             }
-
-
         }
     }
 }

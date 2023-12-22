@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<GameManager>();
             }
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -38,7 +38,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (currentState != null)
+        {
+            currentState.OnExecute(this);
+        }
     }
     public void ChangeState(IState newState)
     {

@@ -3,7 +3,13 @@ guid: 85a97b6ff4c56814c84875a1c3b0c7b5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - testMap: {fileID: 4900000, guid: c2b77e1304135d14da103fe1bd653a48, type: 3}
+  - brickPrefabGreen: {fileID: 4034234248209018316, guid: 155df21d5eea55a45a006f4a64a04adb, type: 3}
+  - brickPrefabBlack: {fileID: 5553725968570522807, guid: 7b14b7bb1b212f042a60786445b0bcc5, type: 3}
+  - brickPrefabRed: {fileID: 2030017615759140133, guid: e12cc09ace8f07f45882fb083635aaf8, type: 3}
+  - brickPrefab: {fileID: 3932268003559760030, guid: 8525a502cf7f23a498e5bb8e79be460d, type: 3}
+  - playerPrefab: {fileID: 5687840132643656624, guid: 1e8ed62be1b851e4cbddb347b0ee6375, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

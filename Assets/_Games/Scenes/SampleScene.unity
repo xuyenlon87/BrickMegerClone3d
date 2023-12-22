@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2072519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072521}
+  - component: {fileID: 2072520}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2072520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b197d8397130a240877074f8bafe7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testMap: {fileID: 4900000, guid: c2b77e1304135d14da103fe1bd653a48, type: 3}
+  brickPrefabGreen: {fileID: 4034234248209018316, guid: 155df21d5eea55a45a006f4a64a04adb, type: 3}
+  brickPrefabBlack: {fileID: 5553725968570522807, guid: 7b14b7bb1b212f042a60786445b0bcc5, type: 3}
+  brickPrefabRed: {fileID: 2030017615759140133, guid: e12cc09ace8f07f45882fb083635aaf8, type: 3}
+  brickPrefab: {fileID: 3932268003559760030, guid: 8525a502cf7f23a498e5bb8e79be460d, type: 3}
+  playerPrefab: {fileID: 5687840132643656624, guid: 1e8ed62be1b851e4cbddb347b0ee6375, type: 3}
+--- !u!4 &2072521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.999516, y: 6.9551315, z: 4.802008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216554205
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,12 +198,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216554205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ef83059cb6e8db4db3257d871fac902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testMap: {fileID: 4900000, guid: c2b77e1304135d14da103fe1bd653a48, type: 3}
+  testMap: {fileID: 0}
   brickPrefabGreen: {fileID: 1328558031}
   brickPrefabBlack: {fileID: 1031537695}
   brickPrefabRed: {fileID: 1303061673}
@@ -183,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 216554205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be895e6715a182248a2aabfe65ec68b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 84e3257b8f63606449241633c9dfd102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &552080050
@@ -405,6 +455,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -471,13 +522,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 3.21, y: 10, z: -15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece8f4048ad547549ad606b9f720ce14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  offset: {x: 0, y: 7, z: -7}
 --- !u!1 &1031537695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5553725968570522807, guid: 7b14b7bb1b212f042a60786445b0bcc5, type: 3}
