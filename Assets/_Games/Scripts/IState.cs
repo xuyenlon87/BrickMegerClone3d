@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartState : IState
+public interface IState
 {
     public void OnStart(GameManager gameManager)
     {
 
     }
 
-    public void OnExecute()
+    public void OnExecute(GameManager gameManager)
     {
 
     }
 
-    public void OnExit()
+    public void OnExit(GameManager gameManager)
     {
 
     }
