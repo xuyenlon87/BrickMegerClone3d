@@ -51,5 +51,9 @@ public class GameManager : MonoBehaviour
             currentState.OnExit(this);
         }
         currentState = newState;
+        if (currentState != null)
+        {
+            currentState.OnEnter(this);
+        }
     }
 }

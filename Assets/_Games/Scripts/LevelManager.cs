@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject brickPrefabBlack;
     [SerializeField] GameObject brickPrefabRed;
     [SerializeField] GameObject brickPrefab;
-    [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject player;
     // Start is called before the first frame update
 
     private void Awake()
@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
     }
     public void DrawMap()
     {
+        Debug.Log("drawMap");
         string data = testMap.text;
         string[] dataArray = data.Split("\r\n");
         int row = dataArray.Length;
@@ -68,7 +69,7 @@ public class LevelManager : MonoBehaviour
                     else if (map[i, j] == 1)
                     {
                         GameObject brickStart = Instantiate(brickPrefabBlack, new Vector3(j, 0, -i), Quaternion.identity);
-                        Instantiate(playerPrefab, (brickStart.transform.position + Vector3.up), Quaternion.identity);
+                        player.transform.position = brickStart.transform.position + Vector3.up;
                     }
                     else if (map[i, j] == 3)
                     {

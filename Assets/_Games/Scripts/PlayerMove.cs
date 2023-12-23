@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] LayerMask brickLayer;
     [SerializeField] GameObject playerImg;
-    [SerializeField] private bool canMove;
     private Vector3 mousePositionStart, mousePositionEnd;
     private Vector3 raycastStart;
     private RaycastHit hitCheckBrick;
