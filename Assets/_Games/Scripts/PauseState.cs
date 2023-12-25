@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseState : MonoBehaviour
+public class PauseState : IState
 {
     private PlayerMove playerMove;
     
